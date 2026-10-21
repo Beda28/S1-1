@@ -35,3 +35,5 @@ python src/init/change_csv.py
 # 6. 외부 데이터 출처
 
 https://archive.ics.uci.edu/dataset/352/online+retail
+
+https://www.kaggle.com/datasets/zalando-research/fashionmnist?utm_source=chatgpt.com
