@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy  as np
 
 class DataAnalyzer:
     def __init__(self, path: str):
@@ -69,3 +70,14 @@ class DataAnalyzer:
 
         mask = (data[column] < lower) | (data[column] > upper)
         return data.loc[mask].copy()
+
+    @staticmethod
+    def extract_image_features(images: np.ndarray) -> pd.DataFrame:
+        if images.ndim != 3: raise ValueError("3차원 이미지 배열이 필요합니다.")
+
+        result = pd.DataFrame({
+            "image_mean": images.mean(axis=(1, 2)),
+            "image_std" : images.std(axis=(1, 2))
+        })
+
+        return result
